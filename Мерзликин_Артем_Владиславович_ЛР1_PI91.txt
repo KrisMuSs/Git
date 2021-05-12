@@ -1,0 +1,255 @@
+artemmerzlikin@MacBook-Pro-Artem ~ % git --version
+git version 2.24.3 (Apple Git-128)
+artemmerzlikin@MacBook-Pro-Artem ~ % --global user.name "Artem Merzlikin"
+artemmerzlikin@MacBook-Pro-Artem ~ % --global user.email "artem.merzlikin.67@mail.ru"
+artemmerzlikin@MacBook-Pro-Artem ~ % cd /Users/artemmerzlikin/git/
+artemmerzlikin@MacBook-Pro-Artem git % mkdir catalog 
+artemmerzlikin@MacBook-Pro-Artem git % cd catalog
+artemmerzlikin@MacBook-Pro-Artem catalog % git init
+
+Initialized empty Git repository in /Users/artemmerzlikin/git/catalog/.git/
+artemmerzlikin@MacBook-Pro-Artem catalog % nano "Мерзликин_Артем_Владиславович_ЛР1_PI91.txt"
+artemmerzlikin@MacBook-Pro-Artem catalog % git add "Мерзликин_Артем_Владиславович_ЛР1_PI91.txt"
+
+artemmerzlikin@MacBook-Pro-Artem catalog % git commit -m "First Commit"
+[master (root-commit) 1eb0c4a] First Commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 "\320\234\320\265\321\200\320\267\320\273\320\270\320\272\320\270\320\275_\320\220\321\200\321\202\320\265\320\274_\320\222\320\273\320\260\320\264\320\270\321\201\320\273\320\260\320\262\320\276\320\262\320\270\321\207_\320\233\320\2401_PI91.txt"
+artemmerzlikin@MacBook-Pro-Artem ~ %  touch .gitignore
+artemmerzlikin@MacBook-Pro-Artem ~ %  git commit -m "Third Commit"  
+master c427bae] Secondary commit
+1 file changed, 0 insertions(+), 0 delections(-)
+artemmerzlikin@MacBook-Pro-Artem catalog % nano file1.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+artemmerzlikin@MacBook-Pro-Artem catalog % git add .gitignore
+artemmerzlikin@MacBook-Pro-Artem catalog % git commit -m "Ignore11"    
+[master b528d06] Ignore11
+ 1 file changed, 1 insertion(+)
+artemmerzlikin@MacBook-Pro-Artem catalog % nano sravn1.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % nano sravn2.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git diff
+diff --git a/sravn1.txt b/sravn1.txt
+index e965047..deb8881 100644
+--- a/sravn1.txt
++++ b/sravn1.txt
+@@ -1 +1 @@
+-Hello
++Hello Alisa
+diff --git a/sravn2.txt b/sravn2.txt
+index 0917008..d0640c8 100644
+--- a/sravn2.txt
++++ b/sravn2.txt
+@@ -1 +1 @@
+-Bye
++Bye Artem 
+artemmerzlikin@MacBook-Pro-Artem catalog % git git commit -m "Sravn11" 
+artemmerzlikin@MacBook-Pro-Artem catalog % git add sravn1.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git add sravn2.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git add sravn1.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git add sravn2.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % touch useless_file.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git add useless_file.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git commit -m "useless" 
+[master d8e31e4] useless
+ 4 files changed, 36 insertions(+), 1 deletion(-)
+ create mode 100644 sravn1.txt
+ create mode 100644 sravn2.txt
+ create mode 100644 useless_file.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git add useless_file.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % nano moving1.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % touch moving2.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git add moving1.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git add moving2.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git commit -m "moving"
+[master fb306e4] moving
+ 2 files changed, 1 insertion(+)
+ create mode 100644 moving1.txt
+ create mode 100644 moving2.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % touch CommonMoving
+artemmerzlikin@MacBook-Pro-Artem catalog % git add CommonMoving
+artemmerzlikin@MacBook-Pro-Artem catalog % git mv moving1.txt CommonMoving/            
+artemmerzlikin@MacBook-Pro-Artem catalog % git mv moving2.txt CommonMoving/
+artemmerzlikin@MacBook-Pro-Artem catalog % git add CommonMoving
+artemmerzlikin@MacBook-Pro-Artem catalog % git add Мерзликин_Артем_Владиславович_ЛР1_PI91.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git commit -m "newmoving"
+artemmerzlikin@MacBook-Pro-Artem catalog % git log
+commit 21727dddd4e2e09f45ba05e5236cecd1cb9c0126 (HEAD -> master)
+Author: Artem Merzlikin <artem.merzlikin.67@mail.ru>
+Date:   Thu Sep 10 07:30:14 2020 +0700
+
+    newmoving
+
+commit fb306e47180031b52671e6f44e615356ce13687d
+Author: Artem Merzlikin <artem.merzlikin.67@mail.ru>
+Date:   Thu Sep 10 07:21:01 2020 +0700
+
+    moving
+
+commit c95de7709e4b2bb56d5e2121e04156c57054983e
+Author: Artem Merzlikin <artem.merzlikin.67@mail.ru>
+Date:   Thu Sep 10 07:15:10 2020 +0700
+
+    delete
+
+commit d8e31e48a099cadb7de4d755998523e78daf577e
+Author: Artem Merzlikin <artem.merzlikin.67@mail.ru>
+Date:   Thu Sep 10 07:08:29 2020 +0700
+
+    useless
+
+commit b528d06a2d36c2a574c6f3267d7bed0e5825eb4d
+Author: Artem Merzlikin <artem.merzlikin.67@mail.ru>
+Date:   Thu Sep 10 06:25:50 2020 +0700
+artemmerzlikin@MacBook-Pro-Artem catalog % nano OtmenaIndex.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git add OtmenaIndex.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % nano OtmenaIndex.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git add OtmenaIndex.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git add Мерзликин_Артем_Владиславович_ЛР1_PI91.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git reset HEAD OtmenaIndex.txt
+git checkout OtmenaIndex.txt
+Updated 1 path from the index
+git add Мерзликин_Артем_Владиславович_ЛР1_PI91.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git tag v1
+artemmerzlikin@MacBook-Pro-Artem catalog % git tag -a v1.4 -m 'my version 1.4'
+artemmerzlikin@MacBook-Pro-Artem catalog % git tag
+v1
+v1.4
+artemmerzlikin@MacBook-Pro-Artem catalog % git show
+commit 94c44ee319370bb5f659614487aafde2e2e90738 (HEAD -> master, tag: v1.4, tag: v1)
+Author: Artem Merzlikin <artem.merzlikin.67@mail.ru>
+Date:   Wed Oct 7 08:37:40 2020 +0700
+
+    OtmenaIndex2
+
+diff --git a/.DS_Store b/.DS_Store
+index 0d4742b..1caa4e7 100644
+Binary files a/.DS_Store and b/.DS_Store differ
+diff --git a/Мерзликин_Артем_Владиславович_ЛР1_PI91.txt b/Мерзликин_Артем_Владиславович_ЛР1_PI91.txt
+index 341b406..159c483 100644
+--- a/Мерзликин_Артем_Владиславович_ЛР1_PI91.txt
++++ b/Мерзликин_Артем_Владиславович_ЛР1_PI91.txt
+@@ -77,4 +77,42 @@ artemmerzlikin@MacBook-Pro-Artem catalog % git add CommonMoving
+ artemmerzlikin@MacBook-Pro-Artem catalog % git mv moving1.txt CommonMoving/            
+ artemmerzlikin@MacBook-Pro-Artem catalog % git mv moving2.txt CommonMoving/
+ artemmerzlikin@MacBook-Pro-Artem catalog % git add CommonMoving
++artemmerzlikin@MacBook-Pro-Artem catalog % git add Мерзликин_Артем_Владиславович_ЛР1_PI91.txt
+:
+artemmerzlikin@MacBook-Pro-Artem catalog % git log --pretty=oneline
+94c44ee319370bb5f659614487aafde2e2e90738 (HEAD -> master, tag: v1.4, tag: v1) OtmenaIndex2
+a523975558edbb769a9593343403b4e3ab3e6e87 Otmena
+21727dddd4e2e09f45ba05e5236cecd1cb9c0126 newmoving
+fb306e47180031b52671e6f44e615356ce13687d moving
+c95de7709e4b2bb56d5e2121e04156c57054983e delete
+d8e31e48a099cadb7de4d755998523e78daf577e useless
+b528d06a2d36c2a574c6f3267d7bed0e5825eb4d Ignore11
+67441774e1790b8d496bed95b2cb4799f6598f82 Third commit
+ad3e671de13ff7782d719c768d52b1705e4d836a Secondary commit
+1eb0c4a9ef9f897589497ede850bbb448eb5adca First Commit
+artemmerzlikin@MacBook-Pro-Artem catalog % git branch
+  b1
+  f1
+  f2
+* f3
+  master
+  newbranch
+artemmerzlikin@MacBook-Pro-Artem catalog % git add FirstFile.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git status
+On branch f3
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   .DS_Store
+	new file:   FirstFile.txt
+	new file:   devfile.txt
+	modified:   Мерзликин_Артем_Владиславович_ЛР1_PI91.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	FirstFIle
+
+artemmerzlikin@MacBook-Pro-Artem catalog % git add FirstFIle
+artemmerzlikin@MacBook-Pro-Artem catalog % git commit -m 'Added new file'
+[f3 dd1b301] Added new file
+ 5 files changed, 42 insertions(+)
+ create mode 100644 FirstFIle
+ create mode 100644 FirstFile.txt
+ create mode 100644 devfile.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git checkout master
+Switched to branch 'master'
+artemmerzlikin@MacBook-Pro-Artem catalog % ls
+CommonMoving
+OtmenaIndex.txt
+file1.txt
+sravn1.txt
+sravn2.txt
+Мерзликин_Артем_Владиславович_ЛР1_PI91.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git merge f3
+Updating 94c44ee..dd1b301
+Fast-forward
+ .DS_Store                                          | Bin 8196 -> 8196 bytes
+ FirstFIle                                          |   1 +
+ FirstFile.txt                                      |   2 ++
+ devfile.txt                                        |   1 +
+ ...?ем_Владиславович_ЛР1_PI91.txt |  38 +++++++++++++++++++++
+ 5 files changed, 42 insertions(+)
+ create mode 100644 FirstFIle
+ create mode 100644 FirstFile.txt
+ create mode 100644 devfile.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % ls
+CommonMoving
+FirstFIle
+FirstFile.txt
+OtmenaIndex.txt
+devfile.txt
+file1.txt
+sravn1.txt
+sravn2.txt
+Мерзликин_Артем_Владиславович_ЛР1_PI91.txt
+artemmerzlikin@MacBook-Pro-Artem catalog % git branch -d f1
+Deleted branch f1 (was 94c44ee).
+artemmerzlikin@MacBook-Pro-Artem catalog % git branch
+  b1
+  f2
+  f3
+* master
+  newbranch
+artemmerzlikin@MacBook-Pro-Artem catalog % git add Мерзликин_Артем_Владиславович_ЛР1_PI91.txt
+Git 
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   devfile.txt
+
+artemmerzlikin@MacBook-Pro-Artem catalog % git stash
+Saved working directory and index state WIP on master: dd1b301 Added new file
+artemmerzlikin@MacBook-Pro-Artem catalog % git status
+On branch master
+nothing to commit, working tree clean
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   devfile.txt
+
+artemmerzlikin@MacBook-Pro-Artem catalog % git stash
+Saved working directory and index state WIP on master: dd1b301 Added new file
+artemmerzlikin@MacBook-Pro-Artem catalog % git status
+On branch master
+nothing to commit, working tree clean
+artemmerzlikin@MacBook-Pro-Artem catalog % git stash apply
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .DS_Store
+	modified:   devfile.txt
+	modified:   Мерзликин_Артем_Владиславович_ЛР1_PI91.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+artemmerzlikin@MacBook-Pro-Artem catalog % git add 
+
